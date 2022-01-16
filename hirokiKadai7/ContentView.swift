@@ -1,16 +1,5 @@
 import SwiftUI
 
-struct NumberInputView: View {
-    @Binding var num: Int?
-
-    var body: some View{
-        TextField("", value: $num, formatter: NumberFormatter())
-            .padding()
-            .keyboardType(.numberPad)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-    }
-}
-
 struct ContentView: View {
     var body: some View {
         TabView {
@@ -20,6 +9,17 @@ struct ContentView: View {
             CalculationView(color: .mint, calculate: -)
                 .tabItem{ Text("item2") }
         }
+    }
+}
+
+struct NumberInputView: View {
+    @Binding var num: Int?
+
+    var body: some View{
+        TextField("", value: $num, formatter: NumberFormatter())
+            .padding()
+            .keyboardType(.numberPad)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
     }
 }
 

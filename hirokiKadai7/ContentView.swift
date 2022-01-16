@@ -1,17 +1,5 @@
 import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
-        TabView {
-            CalculationView(color: .orange, calculate: +)
-                .tabItem{ Text("item1") }
-
-            CalculationView(color: .mint, calculate: -)
-                .tabItem{ Text("item2") }
-        }
-    }
-}
-
 struct CalculationView: View {
     @State private var num1: Int?
     @State private var num2: Int?
@@ -37,6 +25,18 @@ struct CalculationView: View {
 
                 Text("\(result)")
             }
+        }
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        TabView {
+            CalculationView(color: .orange, calculate: +)
+                .tabItem{ Text("item1") }
+
+            CalculationView(color: .mint, calculate: -)
+                .tabItem{ Text("item2") }
         }
     }
 }
